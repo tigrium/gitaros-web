@@ -1,2 +1,3 @@
-# gitaros-web
-Gitáros mise honlapja
+# Gitáros mise honlapja
+
+Gitáros API alapján.
