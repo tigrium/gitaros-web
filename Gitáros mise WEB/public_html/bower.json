@@ -2,6 +2,7 @@
   "name": "Gitáros mise WEB",
   "version": "0.0.1",
   "dependencies": {
-    "polymer": "Polymer/polymer#1.0.0"
+    "polymer": "Polymer/polymer#1.0.0",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#~1.0.2"
   }
 }

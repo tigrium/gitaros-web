@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link rel="import" href="components/proto-element.html">
-  </head>
-  <body>
-    <proto-element></proto-element>
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+        <script>
+            window.Polymer = window.Polymer || {};
+            window.Polymer.dom = 'shadow';
+        </script>
+        <!-- import a component that relies on Polymer -->
+        <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+        <link rel="import" href="components/fejlesztes-alatt.html">
+         <style>
+            html, body, #container {
+                margin: 0;
+                padding: 0;
+                min-height: 100%;
+            }
+        </style>
+    </head>
+    <body class="fullbleed">
+    <fejlesztes-alatt class="fullbleed"></fejlesztes-alatt>
+</body>
 </html>
