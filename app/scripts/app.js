@@ -7,7 +7,7 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
-(function(document) {
+(function (document) {
   'use strict';
 
   // Grab a reference to our auto-binding template
@@ -23,7 +23,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     // app.baseUrl = '/polymer-starter-kit/';
   }
 
-  app.displayInstalledToast = function() {
+  app.displayInstalledToast = function () {
     // Check to make sure caching is actually enabled—it won't be in the dev environment.
     if (!Polymer.dom(document).querySelector('platinum-sw-cache').disabled) {
       Polymer.dom(document).querySelector('#caching-complete').show();
@@ -32,12 +32,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
-  app.addEventListener('dom-change', function() {
+  app.addEventListener('dom-change', function () {
     console.log('Our app is ready to rock!');
+    document.body.className = '';
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
-  window.addEventListener('WebComponentsReady', function() {
+  window.addEventListener('WebComponentsReady', function () {
     // imports are loaded and elements have been registered
   });
 
@@ -45,7 +46,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // the appName in the middle-container and the bottom title in the bottom-container.
   // The appName is moved to top and shrunk on condensing. The bottom sub title
   // is shrunk to nothing on condensing.
-  window.addEventListener('paper-header-transform', function(e) {
+  window.addEventListener('paper-header-transform', function (e) {
     var appName = Polymer.dom(document).querySelector('#mainToolbar .app-name');
     var middleContainer = Polymer.dom(document).querySelector('#mainToolbar .middle-container');
     var bottomContainer = Polymer.dom(document).querySelector('#mainToolbar .bottom-container');
@@ -70,11 +71,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   });
 
   // Scroll page to top and expand header
-  app.scrollPageToTop = function() {
+  app.scrollPageToTop = function () {
     app.$.headerPanelMain.scrollToTop(true);
   };
 
-  app.closeDrawer = function() {
+  app.closeDrawer = function () {
     app.$.paperDrawerPanel.closeDrawer();
   };
 
