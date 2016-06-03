@@ -1,0 +1,53 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+
+<dom-module id="promo-box">
+    <template>
+        <style include="iron-flex iron-flex-alignment">
+            :host {
+                text-align: center;
+                max-width: 20rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            iron-icon {
+                margin: 40px 0;
+                color: var(--default-primary-color);
+                width: 7rem;
+                height: 7rem;
+            }
+
+            .promo-caption {
+                font-size: 1.7rem;
+                font-weight: 500;
+                margin-top: 5px;
+                margin-bottom: 0;
+            }
+            
+            .promo-content {
+                font-weight: 300;
+            }
+        </style>
+
+        <p><iron-icon icon="[[icon]]"></iron-icon></p>
+        <p class="promo-caption">[[caption]]</p>
+        <p class="promo-content"><content></content></p>
+    </template>
+
+    <script>
+        (function () {
+            'use strict';
+
+            Polymer({
+                is: 'promo-box',
+                properties: {
+                    icon: String,
+                    caption: String
+                }
+            });
+        })();
+    </script>
+</dom-module>

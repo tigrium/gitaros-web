@@ -1,0 +1,36 @@
+<dom-module id="flow-text">
+    <template>
+        <style include="shared-styles">
+            :host {
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            h3 {
+                color: var(--default-primary-color);
+                font-weight: 300;
+                font-size: 2.92rem;
+                line-height: 110%;
+                margin: 1.46rem 0 1.168rem 0;
+            }
+
+            @media (max-width: 600px) {
+                h3 {
+                    font-size: 2rem;
+                }
+            }
+        </style>
+
+        <h3><content></content></h3>
+    </template>
+
+    <script>
+        (function () {
+            'use strict';
+
+            Polymer({
+                is: 'flow-text'
+            });
+        })();
+    </script>
+</dom-module>

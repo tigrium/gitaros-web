@@ -11,6 +11,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <script src="../bower_components/page/page.js"></script>
 <script>
   window.addEventListener('WebComponentsReady', function() {
+    var baseTitle = 'Gitáros mise';
 
     // We use Page.js for routing. This is a Micro
     // client-side router inspired by the Express router
@@ -31,6 +32,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.closeDrawer();
       next();
     }
+    
+    function setTitle(title) {
+      app.title = title || baseTitle;
+      if (title) {
+        title = title + ' | ' + baseTitle;
+      } else {
+        title = baseTitle;
+      }
+      // title = title ? (title + ' | ') + baseTitle;
+      document.title = title; 
+    }
 
     // Routes
     page('*', scrollToTop, closeDrawer, function(ctx, next) {
@@ -39,23 +51,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     page('/', function() {
       app.route = 'home';
+      setTitle();
     });
 
     page(app.baseUrl, function() {
       app.route = 'home';
     });
 
-    page('/users', function() {
-      app.route = 'users';
+    page('/misesorok', function() {
+      app.route = 'misesorok';
+      setTitle('Misesorok');
     });
 
-    page('/users/:name', function(data) {
-      app.route = 'user-info';
-      app.params = data.params;
-    });
+    // page('/users/:name', function(data) {
+    //   app.route = 'user-info';
+    //   app.params = data.params;
+    // });
 
-    page('/contact', function() {
-      app.route = 'contact';
+    page('/dia', function() {
+      app.route = 'dia';
+      setTitle('Új dia készítése');
     });
 
     // 404
